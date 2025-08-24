@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: api-python
+    namespace: demo
+spec:
+    replicas: 1
+    selector:
+        matchLabels: { app: api-python }
+    template:
+       metadata:
+         labels: { app: api-python }
+       spec:
+         containers:
+            - name: api-python
+              image: DOCKERHUB_USERNAME/api-python:latest
+               ports: [{ containerPort: 5000 }]

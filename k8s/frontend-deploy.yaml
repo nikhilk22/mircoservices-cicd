@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: frontend
+   namespace: demo
+spec:
+   replicas: 1
+   selector:
+     matchLabels: { app: frontend }
+   template:
+     metadata:
+        labels: { app: frontend }
+     spec:
+       containers:
+         - name: frontend
+           image: DOCKERHUB_USERNAME/frontend:latest
+           env:
+             - name: API_NODE_URL
+               value: http://api-node.demo.svc.cluster.local:4000
+             - name: API_PY_URL
+               value: http://api-python.demo.svc.cluster.local:5000
+           ports: [{ containerPort: 3000 }]

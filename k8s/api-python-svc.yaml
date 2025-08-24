@@ -1,0 +1,12 @@
+apiversion: v1
+kind: Service  
+metadata:
+  name: api-python
+  namespace: demo
+spec:
+  selector: {app: api-python}
+  ports:
+    - port: 5000
+      targetport: 5000
+      portocol: TCP
+

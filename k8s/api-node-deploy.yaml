@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-node
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+     matchlabels: { app: api-node }
+  template:
+     metadata:
+        labels: { app: api-node }
+     spec: 
+        containers:
+          - name: api-node
+            image:
+            ports: [{ containerport: 4000 }]
+
+                

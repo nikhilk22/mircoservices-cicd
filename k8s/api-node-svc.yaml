@@ -1,0 +1,12 @@
+apiversion: v1
+kind: service
+metadata:
+   name: api-node
+   namespace: demo
+spec: 
+   selector: { app: api-node}
+   ports:
+     -port: 4000
+      targetport: 4000
+      protocol: TCP
+
