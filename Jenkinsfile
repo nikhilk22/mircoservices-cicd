@@ -17,7 +17,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/nikhilk22/microservices-demo.git',
+                    url: 'https://github.com/nikhilk22/microservices-cicd.git',
                     credentialsId: 'github-credentials'
             }
         }
@@ -50,6 +50,7 @@ pipeline {
         }
     }
 }
+
 
 
 
