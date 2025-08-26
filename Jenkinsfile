@@ -17,7 +17,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/your-username/microservices-demo.git'
+                    url: 'https://github.com/nikhilk22/microservices-demo.git'
             }
         }
 
@@ -49,3 +49,4 @@ pipeline {
         }
     }
 }
+
